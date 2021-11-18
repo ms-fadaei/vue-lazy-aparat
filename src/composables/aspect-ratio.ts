@@ -1,6 +1,6 @@
 import { ref, computed, watchEffect, Ref } from 'vue'
 
-export default function aspectRatioToPaddingTop(aspectRatio: Ref<string>) {
+export default function useAspectRatio(aspectRatio: Ref<string>) {
   const width = ref(0)
   const height = ref(0)
 

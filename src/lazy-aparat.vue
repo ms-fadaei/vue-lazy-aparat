@@ -1,17 +1,12 @@
 <template>
   <div class="lazy-aparat">
     <div class="lazy-aparat__container" :style="`padding-top: ${paddingTop}`">
-      <template v-if="coverShowing">
+      <template v-if="coverVisibility">
         <img class="lazy-aparat__cover" :src="cover" :alt="videoCaption" />
-        <div class="lazy-aparat__layout" @click="coverShowing = false">
+        <div class="lazy-aparat__layout" @click="coverVisibility = false">
           <div class="lazy-aparat__layout-inner">
             <span class="lazy-aparat__layout-play">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
-                <path
-                  d="M7.09 20a1.28 1.28 0 01-.65-.14C5.12 19.08 5 13.58 5 11.92c0-2.09.14-7 1.43-7.76 1.3-.76 5.62 1.58 7.42 2.62C15.3 7.61 20 10.43 20 12s-4.24 4.12-6.07 5.17C12.34 18.08 8.82 20 7.09 20z"
-                  fill="currentcolor"
-                ></path>
-              </svg>
+              <img src="./assets/play.svg" alt="پخش ویدئو" />
             </span>
             <strong v-if="videoCaption" class="lazy-aparat__layout-title">{{ videoCaption }}</strong>
             <span v-if="videoDuration" class="lazy-aparat__layout-duration">{{ videoDuration }}</span>
@@ -31,13 +26,14 @@
 </template>
 
 <script lang="ts" setup>
-import { toRefs, ref } from 'vue'
-import { aspectRatioToPaddingTop, createAparatFrameUrl } from '@/composables'
+import { toRefs } from 'vue'
+import { useAspectRation, useVideoFrame, useCover } from '@/composables'
 
 const props = defineProps({
   cover: {
     type: String,
-    required: true,
+    required: false,
+    default: undefined,
   },
   coverFit: {
     type: String,
@@ -77,30 +73,31 @@ const props = defineProps({
     type: String,
     required: false,
     default: 'cover',
-    validator: (value: string) => ['strict', 'cover', 'lazy', 'normal'].includes(value),
+    validator: (value: string) => ['cover', 'default'].includes(value),
   },
 })
 
 const { aspectRatio, videoHash, mode } = toRefs(props)
 
-const paddingTop = aspectRatioToPaddingTop(aspectRatio)
-const needCover = ['strict', 'cover'].includes(mode.value)
-const coverShowing = ref(needCover)
-const videoUrl = createAparatFrameUrl(videoHash, needCover)
+const paddingTop = useAspectRation(aspectRatio)
+const coverVisibility = useCover(mode)
+const videoUrl = useVideoFrame(videoHash, mode)
 
 defineExpose({
   paddingTop,
-  coverShowing,
+  coverVisibility,
   videoUrl,
 })
 </script>
 
 <style scoped>
 .lazy-aparat {
+  direction: rtl;
   position: relative;
   overflow: hidden;
   background-color: #212229;
 }
+
 .lazy-aparat__cover {
   position: absolute;
   top: 0;
@@ -121,8 +118,6 @@ defineExpose({
 }
 
 .lazy-aparat__layout-inner {
-  direction: ltr;
-  color: #fff;
   max-width: 800px;
   width: 100%;
   position: absolute;
@@ -132,13 +127,10 @@ defineExpose({
   padding: 1em;
   text-align: center;
   z-index: 1;
-  font-size: 0.52rem;
+  font-size: 0.55rem;
 }
 
 .lazy-aparat__layout-play {
-  color: #fff;
-  text-align: center;
-  vertical-align: baseline;
   position: relative;
   display: inline-block;
   width: 6em;
@@ -148,13 +140,9 @@ defineExpose({
   background: #ed145b;
 }
 
-.lazy-aparat__layout-play svg {
-  direction: ltr;
-  color: #fff;
-  word-break: normal;
-  text-align: center;
+.lazy-aparat__layout-play img {
   top: 50%;
-  bottom: 50%;
+  left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   width: 2.5em;
@@ -162,8 +150,6 @@ defineExpose({
 }
 
 .lazy-aparat__layout-title {
-  direction: rtl;
-  text-align: center;
   max-height: 3.2em;
   font-size: 1.8em;
   color: #fff;

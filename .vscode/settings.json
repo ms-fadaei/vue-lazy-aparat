@@ -6,7 +6,8 @@
 		"mozallowfullscreen",
 		"vite",
 		"vitejs",
-		"webkitallowfullscreen"
+		"webkitallowfullscreen",
+		"پیشفرض"
 	],
 	"vetur.validation.template": false,
 	"vetur.validation.script": false,

@@ -1,38 +1,41 @@
 <template>
   <div class="main">
-    <div class="switch-box">
+    <div class="switch-box video-box">
       <div class="switch-box-row">
-        <input id="normal" v-model="componentSwitch" type="radio" name="frame-choose" value="normal" />
-        <label for="normal">آی‌فریم معمولی</label>
+        <input id="normal" v-model="mode" type="radio" name="frame-choose" value="default" />
+        <label for="normal">مود: پیشفرض</label>
       </div>
       <div class="switch-box-row">
-        <input id="component" v-model="componentSwitch" type="radio" name="frame-choose" value="component" />
-        <label for="component">کامپوننت توسعه داده شده</label>
+        <input id="component" v-model="mode" type="radio" name="frame-choose" value="cover" />
+        <label for="component">مود: نمایش کاور</label>
       </div>
     </div>
-    <NormalFrame v-if="componentSwitch === 'normal'" class="aparat-box" :video-hash="hash" />
     <LazyAparat
-      v-else
-      class="aparat-box"
-      cover="./cover.jpg"
-      :video-hash="hash"
-      :aspect-ratio="ratio"
+      class="video-box"
+      :cover="cover"
+      :video-hash="videoHash"
+      :aspect-ratio="aspectRatio"
       :cover-fit="coverFit"
-      video-caption="آیا اپل نگران محیط زیست است؟ دلایل حذف شارژر از جعبه آیفون"
-      video-duration="11:11"
+      :video-caption="videoCaption"
+      :video-duration="videoDuration"
+      :allow-full-screen="allowFullScreen"
+      :mode="mode"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import NormalFrame from '~/components/NormalFrame.vue'
 import LazyAparat from '@/lazy-aparat.vue'
 
-const hash = ref('ieCzu')
-const ratio = ref('16:9')
+const cover = ref('./cover.jpg')
 const coverFit = ref('cover')
-const componentSwitch = ref('component')
+const videoHash = ref('ieCzu')
+const videoCaption = ref('آیا اپل نگران محیط زیست است؟ دلایل حذف شارژر از جعبه آیفون')
+const videoDuration = ref('11:11')
+const aspectRatio = ref('16:9')
+const allowFullScreen = ref(true)
+const mode = ref('cover')
 </script>
 
 <style>
@@ -57,15 +60,12 @@ body {
   padding: 100px 0;
 }
 
-.aparat-box {
+.video-box {
   max-width: 500px;
   margin: 0 auto;
 }
 
 .switch-box {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
   margin-bottom: 30px;
 }
 
