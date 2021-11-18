@@ -1,0 +1,13 @@
+{
+	"cSpell.words": [
+		"autoplay",
+		"iframe",
+		"mozallowfullscreen",
+		"vite",
+		"vitejs",
+		"webkitallowfullscreen"
+	],
+	"vetur.validation.template": false,
+	"vetur.validation.script": false,
+	"vetur.validation.style": false,
+}
