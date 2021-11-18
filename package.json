@@ -2,7 +2,7 @@
   "name": "vue-lazy-aparat",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config ./playground/vite.config.ts",
     "build": "vue-tsc --noEmit && vite build",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
