@@ -41,8 +41,8 @@ const props = defineProps({
   },
   coverFit: {
     type: String,
-    default: 'cover',
     required: false,
+    default: 'cover',
     validator: (value: string) => ['cover', 'contain'].includes(value),
   },
   videoHash: {

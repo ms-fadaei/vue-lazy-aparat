@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import LazyAparat from './components/LazyAparat.vue'
+import LazyAparat from '@/lazy-aparat.vue'
 
 const hash = ref('ieCzu')
 const ratio = ref('16:9')
