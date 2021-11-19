@@ -10,9 +10,7 @@ export default ((): InstallableComponent => {
 
   // Attach install function executed by Vue.use()
   installable.install = (app: App) => {
-    app.component('VueLazyAparat', installable)
+    app.component('LazyAparat', installable)
   }
   return installable
 })()
-
-export { component as LazyAparat }

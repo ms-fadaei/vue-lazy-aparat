@@ -70,6 +70,3 @@ type InstallableComponent = LazyAparat & { install: Exclude<Plugin['install'], u
 
 declare const _default: InstallableComponent
 export default _default
-
-declare const _component: LazyAparat
-export { _component as LazyAparat }
