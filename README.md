@@ -2,6 +2,12 @@
 
 > Work In Progress
 
+## install
+
+```bash
+yarn add vue-lazy-aparat # npm i vue-lazy-aparat
+```
+
 ## Run The Playground
 
 1. Clone the repository
