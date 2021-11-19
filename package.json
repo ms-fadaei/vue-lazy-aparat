@@ -19,11 +19,14 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "node": {
-      "import": "./dist/lazy-aparat.mjs",
-      "require": "./dist/lazy-aparat.cjs"
+    ".": {
+      "node": {
+        "import": "./dist/lazy-aparat.mjs",
+        "require": "./dist/lazy-aparat.cjs"
+      },
+      "default": "./dist/lazy-aparat.mjs"
     },
-    "default": "./dist/lazy-aparat.mjs"
+    "./dist/style.css": "./dist/style.css"
   },
   "main": "./dist/lazy-aparat.cjs",
   "browser": "./dist/lazy-aparat.mjs",
