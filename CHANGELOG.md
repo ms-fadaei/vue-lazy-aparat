@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.3](https://github.com/ms-fadaei/vue-lazy-aparat/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2021-11-19)
+
+### Bug Fixes
+
+- remove named export ([02ac1dc](https://github.com/ms-fadaei/vue-lazy-aparat/commit/02ac1dc965d05e96767595afb04edc9bfebb3755))
+
 ### [0.0.1-alpha.2](https://github.com/ms-fadaei/vue-lazy-aparat/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2021-11-19)
 
 ### Bug Fixes
