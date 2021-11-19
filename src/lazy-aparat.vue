@@ -114,7 +114,7 @@ defineExpose({
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(41, 42, 51, 0.8);
+  background-color: rgb(41 42 51 / 80%);
 }
 
 .lazy-aparat__layout-inner {
@@ -170,7 +170,7 @@ defineExpose({
   border-radius: 3px;
   padding: 0.3em 0.5em;
   margin-top: 1em;
-  background-color: rgba(111, 114, 133, 0.9);
+  background-color: rgb(111 114 133 / 90%);
   cursor: default;
 }
 
