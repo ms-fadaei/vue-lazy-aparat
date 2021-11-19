@@ -36,7 +36,9 @@
   "scripts": {
     "dev": "vite --config ./playground/vite.config.ts",
     "build": "vue-tsc --noEmit && vite build",
+    "prepack": "yarn build",
     "prepare": "husky install",
+    "release": "npx standard-version && git push --follow-tags && npm publish",
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "lint:style": "stylelint src/**/*.{css,scss,vue}",
     "lint:markup": "vue-tsc --noEmit"
