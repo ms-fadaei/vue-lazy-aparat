@@ -1,6 +1,38 @@
 {
   "name": "vue-lazy-aparat",
   "version": "0.0.0",
+  "description": "Performant lazy-load for the Aparat iframe",
+  "repository": "ms-fadaei/vue-lazy-aparat",
+  "license": "MIT",
+  "keywords": [
+    "lazy-load",
+    "Aparat",
+    "lazy",
+    "iframe",
+    "vue"
+  ],
+  "author": {
+    "name": "Mohammad Saleh Fadaei",
+    "email": "ms.fadaei1997@gmail.com",
+    "url": "https://twitter.com/ms_fadaei"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "node": {
+      "import": "./dist/lazy-aparat.mjs",
+      "require": "./dist/lazy-aparat.cjs"
+    },
+    "default": "./dist/lazy-aparat.mjs"
+  },
+  "main": "./dist/lazy-aparat.cjs",
+  "browser": "./dist/lazy-aparat.mjs",
+  "module": "./dist/lazy-aparat.mjs",
+  "unpkg": "./dist/lazy-aparat.min.js",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "dev": "vite --config ./playground/vite.config.ts",
     "build": "vue-tsc --noEmit && vite build",
@@ -14,15 +46,6 @@
     "*.{css,scss,vue}": "stylelint --fix",
     "*": "prettier -w -u"
   },
-  "main": "dist/lazy-aparat.cjs",
-  "browser": "dist/lazy-aparat.mjs",
-  "module": "dist/lazy-aparat.mjs",
-  "unpkg": "dist/lazy-aparat.min.js",
-  "types": "dist/types/src/entry.esm.d.ts",
-  "files": [
-    "dist/*",
-    "src/*"
-  ],
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
@@ -40,6 +63,7 @@
     "lint-staged": "^12.0.2",
     "postcss-html": "^1.2.0",
     "prettier": "^2.4.1",
+    "standard-version": "^9.3.2",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-recommended-vue": "^1.0.0",
