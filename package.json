@@ -31,6 +31,7 @@
   "main": "./dist/lazy-aparat.cjs",
   "browser": "./dist/lazy-aparat.mjs",
   "module": "./dist/lazy-aparat.mjs",
+  "types": "./src/index.d.ts",
   "unpkg": "./dist/lazy-aparat.min.js",
   "files": [
     "dist/*",
