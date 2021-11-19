@@ -1,6 +1,6 @@
 {
   "name": "vue-lazy-aparat",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "Performant lazy-load for the Aparat iframe",
   "repository": "ms-fadaei/vue-lazy-aparat",
   "license": "MIT",
