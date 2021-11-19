@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.2](https://github.com/ms-fadaei/vue-lazy-aparat/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2021-11-19)
+
+### Bug Fixes
+
+- fix compoent name difference on install function ([c4f0ca5](https://github.com/ms-fadaei/vue-lazy-aparat/commit/c4f0ca559ea7c31fb3e53904d69bf816a30e3274))
+
 ### 0.0.1-alpha.1 (2021-11-19)
 
 ### Features
