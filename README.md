@@ -8,6 +8,50 @@
 yarn add vue-lazy-aparat # npm i vue-lazy-aparat
 ```
 
+## Props
+
+```js
+cover: {
+  type: String,
+  required: false,
+  default: undefined,
+},
+coverFit: {
+  type: String,
+  required: false,
+  default: 'cover',
+},
+videoHash: {
+  type: String,
+  required: true,
+},
+videoCaption: {
+  type: String,
+  required: false,
+  default: '',
+},
+videoDuration: {
+  type: String,
+  required: false,
+  default: '',
+},
+aspectRatio: {
+  type: String,
+  required: false,
+  default: '16:9',
+},
+allowFullScreen: {
+  type: Boolean,
+  required: false,
+  default: true,
+},
+mode: {
+  type: String,
+  required: false,
+  default: 'cover',
+},
+```
+
 ## Run The Playground
 
 1. Clone the repository
