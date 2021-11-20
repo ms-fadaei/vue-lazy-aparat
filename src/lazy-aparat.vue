@@ -27,7 +27,7 @@
 
 <script lang="ts" setup>
 import { toRefs } from 'vue'
-import { useAspectRation, useVideoFrame, useCover } from '@/composables'
+import { useAspectRatio, useVideoFrame, useCover } from '@/composables'
 
 const props = defineProps({
   cover: {
@@ -79,7 +79,7 @@ const props = defineProps({
 
 const { aspectRatio, videoHash, mode } = toRefs(props)
 
-const paddingTop = useAspectRation(aspectRatio)
+const paddingTop = useAspectRatio(aspectRatio)
 const coverVisibility = useCover(mode)
 const videoUrl = useVideoFrame(videoHash, mode)
 
