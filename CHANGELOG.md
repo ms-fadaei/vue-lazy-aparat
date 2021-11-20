@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.4](https://github.com/ms-fadaei/vue-lazy-aparat/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2021-11-20)
+
+### Bug Fixes
+
+- some workaround for autoplaying videos ([bbd6387](https://github.com/ms-fadaei/vue-lazy-aparat/commit/bbd6387ff06fee9d079d60676cb9297b21c67b1b))
+
 ### [0.0.1-alpha.3](https://github.com/ms-fadaei/vue-lazy-aparat/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2021-11-19)
 
 ### Bug Fixes
