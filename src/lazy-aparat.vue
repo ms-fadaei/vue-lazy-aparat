@@ -17,9 +17,9 @@
         v-else
         class="lazy-aparat__frame"
         :src="videoUrl"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
         :allowFullScreen="allowFullScreen || undefined"
-        :webkitallowfullscreen="allowFullScreen || undefined"
-        :mozallowfullscreen="allowFullScreen || undefined"
       />
     </div>
   </div>
