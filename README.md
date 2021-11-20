@@ -8,6 +8,12 @@
 yarn add vue-lazy-aparat # npm i vue-lazy-aparat
 ```
 
+## Usage
+
+```js
+import LazyAparat from 'vue-lazy-aparat'
+```
+
 ## Props
 
 ```js
