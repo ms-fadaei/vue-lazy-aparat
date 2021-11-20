@@ -14,6 +14,10 @@ yarn add vue-lazy-aparat # npm i vue-lazy-aparat
 import LazyAparat from 'vue-lazy-aparat'
 ```
 
+```css
+@import 'vue-lazy-aparat/dist/style.css';
+```
+
 ## Props
 
 ```js
